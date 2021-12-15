@@ -1,6 +1,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 as build-env
 COPY . ./
-RUN dotnet restore
 RUN dotnet publish ./AutoPacker.csproj -c Release -o out --no-self-contained
 
 # Label the container
