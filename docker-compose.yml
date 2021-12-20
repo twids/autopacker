@@ -1,0 +1,15 @@
+version: "2.1"
+services:
+  autounpack:
+    image: twids/autounpacker:latest
+    container_name: autounpacker
+    environment:
+      - PUID=1000
+    volumes:
+      - ./data/config:/config
+      - /media/lager/Torrents:/source
+      - /media/lager/tvshows:/tvshows
+      - /media/lager/movies:/movies
+      - /media/lager/Lager:/other
+    restart: unless-stopped
+    
